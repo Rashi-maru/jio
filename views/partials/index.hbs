@@ -1,58 +1,363 @@
-{{!-- section --}}
+{{! section }}
 
+<style>
+  .trial { margin-left: 10%; margin-right: 10%; }
+
+</style>
+
+<h1 style="text-align: center;">Content Form</h1>
+<br />
+
+{{!-- <form action="/uploaddetails" method="POST">
+  <div class="form-group" class="trial">
+    <label for="Name"><h3>1. Content form submitted by</h3></label>
+    <input id="Name" type="text" class="form-control" />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <h3>2. What kind of content is this?</h3>
+    <input
+      type="radio"
+      class="non-featured"
+      id="article"
+      name="name"
+      value="article"
+    />
+    <label for="non-featured">Article</label><br />
+    <input
+      type="radio"
+      class="featured"
+      id="Featured Project Report"
+      name="name"
+      value="Featured Project Report"
+    />
+    <label for="featured">Featured Project Report</label><br />
+    <input
+      type="radio"
+      class="non-featured"
+      id="Project brief"
+      name="name"
+      value="Project Brief"
+    />
+    <label for="non-featured">Project Brief</label><br />
+    <input
+      type="radio"
+      class="non-featured"
+      id="Data Drishti"
+      name="name"
+      value="Data Drishti"
+    />
+    <label for="non-featured">Data Drishti</label><br />
+    <input
+      type="radio"
+      class="non-featured"
+      id="Product(Self Service Tool)"
+      name="name"
+      value="Product(Self Service Tool)"
+    />
+    <label for="non-featured">Product(Self Service Tool)</label><br />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <label for="heading"><h3>
+        3. What is it called? (Heading as you want it to appear across the
+        website)
+      </h3></label>
+    <input id="heading" type="text" class="form-control" />
+  </div>
+
+  <br />
+
+  <div class="form-group" class="trial">
+    <label for="heading"><h3>
+        4. What should be mentioned as the authors/project members? Please
+        mention RIL usernames/email IDs
+      </h3></label>
+    <input id="members" type="text" class="form-control" />
+  </div>
+  <br />
+
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>
+        5. Please write a short 30 word abstract/description of the project.
+      </h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br />
+  <!-- 6. Please upload a high resolution image which you feel represents your project.  Please make sure it is not copyright against use(Marketplace is an internal company portal) -->
+
+  <div class="form-group" class="trial">
+    <h3>7. Please select the business value your project is related to:</h3>
+    <input type="checkbox" id="Revenue" name="Revenue" value="Revenue" />
+    <label for="Revenue"> Contribution to Revenue</label><br />
+    <input
+      type="checkbox"
+      id="Effectiveness"
+      name="Effectiveness"
+      value="Effectiveness"
+    />
+    <label for="Effectiveness">
+      Increased Effectiveness or Productivity</label><br />
+
+    <input
+      type="checkbox"
+      id="Resilience"
+      name="Resilience"
+      value="Resilience"
+    />
+    <label for="Resilience"> Improved Resilience or Reliability</label><br />
+
+    <input
+      type="checkbox"
+      id="Cost Reduction"
+      name="Cost Reduction"
+      value="Cost Reduction"
+    />
+    <label for="Cost Reduction"> Cost Reduction or Avoidance</label><br />
+    <input type="checkbox" id="Improved" name="Improved" value="Improved" />
+    <label for="Improved"> Improved uality/Safety/Compliance</label><br />
+    <input
+      type="checkbox"
+      id="Risk Mitigation"
+      name="Risk Mitigation"
+      value="Risk Mitigation"
+    />
+    <label for="Risk Mitigation"> Risk Mitigation</label><br />
+    <input
+      type="checkbox"
+      id="User Satisfaction"
+      name="User Satisfaction"
+      value="User Satisfaction"
+    />
+    <label for="User Satisfaction"> User Satisfaction</label><br />
+    <input
+      type="checkbox"
+      id="Others"
+      name="Not Applicable"
+      value="Not Applicable"
+    />
+    <label for="Not Applicable"> Not Applicable</label><br />
+    <br />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <h3>8. Please tag the business function your project is related to:</h3>
+    <input type="checkbox" id="Marketing" name="Marketing" value="Marketing" />
+    <label for="Marketing"> Marketing</label><br />
+    <input
+      type="checkbox"
+      id="Operations"
+      name="Operations"
+      value="Operations"
+    />
+    <label for="Operations"> Operations</label><br />
+    <input type="checkbox" id="Finance" name="Finance" value="Finance" />
+    <label for="Finance"> Finance</label><br />
+    <input type="checkbox" id="HR" name="HR" value="HR" />
+    <label for="HR"> HR</label><br />
+    <input type="checkbox" id="Security" name="Security" value="Security" />
+    <label for="Security"> Security</label><br />
+    <input type="checkbox" id="Others" name="Others" value="Others" />
+    <label for="Others"> Others</label><br /><br />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <h3>9. Please tag the business your project is related to:</h3>
+    <input type="checkbox" id="Marketing" name="R&M" value="R&M" />
+    <label for="R&M"> R&M</label><br />
+    <input type="checkbox" id="JioBP" name="JioBP" value="JioBP" />
+    <label for="JioBP"> JioBP</label><br />
+    <input type="checkbox" id="PetChem" name="PetChem" value="PetChem" />
+    <label for="PetChem"> PetChem</label><br />
+    <input type="checkbox" id="MFG" name="MFG" value="MFG" />
+    <label for="MFG"> MFG</label><br />
+    <input type="checkbox" id="P&C" name="P&C" value="P&C" />
+    <label for="P&C"> P&C</label><br />
+    <input type="checkbox" id="FC&A" name="FC&A" value="FC&A" />
+    <label for="FC&A"> FC&A</label><br />
+    <input type="checkbox" id="SCM" name="SCM" value="SCM" />
+    <label for="SCM"> SCM</label><br />
+    <input type="checkbox" id="RPMG" name="RPMG" value="RPMG" />
+    <label for="RPMG"> RPMG</label><br />
+    <input type="checkbox" id="R&D" name="R&D" value="R&D" />
+    <label for="R&D"> R&D</label><br />
+    <input type="checkbox" id="IT" name="IT" value="IT" />
+    <label for="IT"> IT</label><br />
+    <input
+      type="checkbox"
+      id="Corporate Security"
+      name="Corporate Security"
+      value="Corporate Security"
+    />
+    <label for="Corporate Security"> Corporate Security</label><br />
+    <input
+      type="checkbox"
+      id="Corporate Services"
+      name="Corporate Services"
+      value="Corporate Services"
+    />
+    <label for="Corporate Services">Corporate Services</label><br />
+    <input type="checkbox" id="E&P" name="E&P" value="E&P" />
+    <label for="E&P">E&P</label><br />
+    <input type="checkbox" id="Retail" name="Retail" value="Retail" />
+    <label for="Retail">Retail</label><br />
+    <input type="checkbox" id="Others" name="Others" value="Others" />
+    <label for="Others">Others</label><br />
+    <br />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <h3>10. Please tag the technology that your submission is related to:</h3>
+    <input type="checkbox" id="Image" name="Image" value="Image" />
+    <label for="Image">Image & Video Analytics</label><br />
+    <input type="checkbox" id="Video" name="Video" value="Video" />
+    <label for="Video">Video & Video Analytics</label><br />
+    <input
+      type="checkbox"
+      id="Intelligent"
+      name="Intelligent"
+      value="Intelligent"
+    />
+    <label for="Intelligent">Intelligent Automation</label><br />
+    <input
+      type="checkbox"
+      id="Optimization"
+      name="Optimization"
+      value="Optimization"
+    />
+    <label for="Optimization">Optimization & Simulation</label><br />
+    <input
+      type="checkbox"
+      id="Visualization"
+      name="Visualization"
+      value="Visualization"
+    />
+    <label for="Visualization">Visualization</label><br />
+    <input type="checkbox" id="Machine" name="Machine" value="Machine" />
+    <label for="Machine">Machine Learning/Deep Learning & Statistics</label>
+    <br />
+    <input type="checkbox" id="Others" name="Others" value="Others" />
+    <label for="Others">Others</label><br />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <h3>
+      11. What other tags not covered above? Adding more tags helps in
+      searchability. (eg. NLP, sentiment analyzer, EDA, preprocessing, etc.)
+    </h3>
+    <input id="tags" type="text" class="form-control" />
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>13. Result </h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>14. Business context</h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br />
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>15. Methodology</h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br />
+  <!-- qs.  image -->
+
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>17. Usage</h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br />
+
+  <div class="form-group" class="trial">
+    <label for="comment"><h3>18. Business value</h3></label>
+    <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+
+  <br />
+  <!-- 12. Please upload the content file. Please make sure it is formatted as you would like to see it on the website -->
+
+  <br />
+
+  <center> <button class="btn btn-primary btclass">Submit</button></center>
+
+</form> --}}
+<br />
+
+{{! section }}
 <section class="section my-4">
-    <div class="container-text-center">
-        <div class="title py-5"> <!-- py-5 is padding=5 -->
-           <center> <h1> Node File Uploader </h1> </center>
-            <center> <p class="subtitle">Upload images to the <strong>Server</strong></p> </center> 
-            <strong> <center style="color:red">Interface to capture multiple images from local machine, storing them into mongodb, fetching them from mongodb and displaying on the screen</center> </strong> 
-        </div>
-   
-<div class="row justify-content-center">
-    <div class="col-4">
-        <form action="/uploadmultiple" enctype="multipart/form-data" method="POST">
-        <div class="row">
+  <div class="container text-center">
+    <div class="title py-5">
+      <h1>Node File Uploader</h1>
+      <p class="subtitle">Upload Images to the <strong>Server</strong></p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <form
+          action="/uploadmultiple"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <div class="row">
             <div class="col-8">
-                <input type="file" class="form-control" name="images" id="formFile" multiple>
+              <input
+                type="file"
+                class="form-control"
+                name="images"
+                id="formFile"
+                multiple
+              />
             </div>
             <div class="col-2">
-                <input type="submit" class="btn btn-warning" value="Upload Images">
+              <input
+                type="submit"
+                class="btn btn-warning"
+                value="Upload Images"
+              />
             </div>
-        </div>
+          </div>
         </form>
+      </div>
     </div>
-</div>
 
-{{!-- display images --}}
-<section class="mt-5">
-    <div class="row">
+    {{! display images }}
+    <section class="mt-5">
+      <div class="row">
+        {{#each images}}
+          {{#each this}}
+            {{#if imageBase64}}
+              {{! bootstrap cads }}
+              <div class="col-4">
+                <div class="card shadow" style="width: 18rem;">
+                  <img
+                    src="data:{{contentType}};base64,{{imageBase64}}"
+                    class="card-img-top"
+                    class="img-fluid"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title font-poppins">UI/UX Design</h5>
+                    <p class="text-secondary font-size-09">Some quick example
+                      text to build on the card title and make up the bulk of
+                      the card's content.<br /><b>Image type:{{contentType}}</b></p>
+                    <a
+                      href="#"
+                      class="btn btn-info font-size-09 text-light"
+                    >Read More...</a>
+                  </div>
+                </div><br>
+              </div>
+              {{! /bootstrap cards }}
+            {{/if}}
+          {{/each}}
+        {{/each}}
+      </div>
+    </section>
+    {{! /display images }}
 
-        <div class="col-3">
-            {{#each images}} <!-- iterate over array -->
-{{#each this}} <!-- iterrate over object -->
-         {{#if imageBase64}}
-
-
-{{!-- bootstrap cards --}}
- <div class="card shadow" style="width: 18rem;">
-  <img src='data:{{contentType}};base64,{{imageBase64}}' class="card-img-top" class="img-fluid" alt="...">
-  <div class="card-body">
-    <h5 class="card-title font-poppins">Jio</h5>
-    <p class="text-secondary font-size-09">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info font-size-09 text-light">Link to...</a>
   </div>
-</div>
-</div>
-{{!-- /bootstrap cards --}}
-
-         {{/if}}
-            {{/each}}
-            {{/each}}
-    </div>
 </section>
-{{!-- /display images --}}
-
- </div>
-</section>
-
-{{!-- /section --}}
+{{! /section }}
